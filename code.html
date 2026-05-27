@@ -1,0 +1,520 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Silvia & Andres - Invitación de Boda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Poppins:wght@300;400;500&amp;family=EB+Garamond:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#131f02",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-bright": "#fbf9f5",
+                        "inverse-surface": "#30312e",
+                        "secondary-fixed-dim": "#becbaf",
+                        "on-secondary-container": "#5a664f",
+                        "border-soft": "#EDE7DD",
+                        "surface-container": "#efeeea",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#45483e",
+                        "surface-variant": "#e4e2de",
+                        "on-primary-fixed-variant": "#3e4b28",
+                        "outline-variant": "#c6c8bb",
+                        "text-primary": "#3F3B36",
+                        "accent-sand": "#D9CBB8",
+                        "primary-fixed-dim": "#bccd9e",
+                        "surface-dim": "#dbdad6",
+                        "surface": "#fbf9f5",
+                        "on-secondary-fixed-variant": "#3f4a35",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#eae8e4",
+                        "on-tertiary-fixed-variant": "#4b463b",
+                        "primary-fixed": "#d8e9b9",
+                        "inverse-on-surface": "#f2f0ed",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-primary-container": "#fbffeb",
+                        "white-soft": "#FFFDFC",
+                        "primary": "#53613b",
+                        "on-secondary-fixed": "#141e0d",
+                        "text-secondary": "#7A746B",
+                        "on-tertiary-fixed": "#1f1b11",
+                        "surface-tint": "#55633d",
+                        "tertiary": "#615b4f",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f5",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#7a7467",
+                        "primary-container": "#6b7a52",
+                        "tertiary-fixed-dim": "#cec6b6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae7ca",
+                        "secondary": "#56624b",
+                        "inverse-primary": "#bccd9e",
+                        "on-surface": "#1b1c1a",
+                        "outline": "#76786d",
+                        "on-background": "#1b1c1a",
+                        "tertiary-fixed": "#ebe1d1",
+                        "secondary-container": "#d7e4c7"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-safe": "24px",
+                        "lg": "32px",
+                        "xxl": "120px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    fontFamily: {
+                        "h2": ["Playfair Display"],
+                        "h3": ["Cormorant Garamond"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "h1": ["Playfair Display"],
+                        "headline-sm": ["EB Garamond"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Poppins"]
+                    },
+                    fontSize: {
+                        "h2": ["3rem", { lineHeight: "1.2", fontWeight: "500" }],
+                        "h3": ["2rem", { lineHeight: "1.3", fontWeight: "500" }],
+                        "body-lg": ["1.125rem", { lineHeight: "1.8", fontWeight: "400" }],
+                        "headline-lg": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "600" }],
+                        "h1": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "600" }],
+                        "headline-sm": ["2rem", { lineHeight: "1.3", fontWeight: "500" }],
+                        "headline-md": ["3rem", { lineHeight: "1.2", fontWeight: "500" }],
+                        "headline-lg-mobile": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "body-md": ["1rem", { lineHeight: "1.7", fontWeight: "400" }],
+                        "label-caps": ["0.8rem", { letterSpacing: "0.12em", fontWeight: "500" }]
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f5; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9CBB8; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #becbaf; 
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;display=swap" rel="stylesheet" class=""></head>
+<body class="bg-background text-text-primary antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Shared Component -->
+
+<main>
+<!-- 1. HERO -->
+<section class="relative min-h-screen flex items-center justify-center px-gutter overflow-hidden pt-xxl">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center opacity-70 max-sm:object-[75%_center]" data-alt="A soft, cinematic wide shot of an empty, elegant outdoor wedding aisle in a European garden. The path is lined with subtle white floral arrangements and olive branches. The lighting is golden hour, creating a warm, romantic, and serene light-mode aesthetic with a palette of olive greens, warm whites, and soft beige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8C5dazZBNDAKugsDOZof294vaf14B782ohbOCKd-jkF3YJm_6habF8od6DdCqwaEDev7fnhDY0VwCIfumg_NpY9hvKWGWNmDVMyCP-Qa16avDs_1MbF0Yzemo2t-JSVMZVTi2Ys9e94sQGrS0t4qatyWj0Lyx1M8EsgVRZWxMVhnPVrjHGAMdbcA9VZbzeqsKEUb01e18n5HRygBVrKJIdqB_jxkCPjQMdZHp4T25Qh2noS7UFcswEuuWt5-RZjWrsYNOfVR8qMsyqY">
+<!-- Subtle Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b to-background from-background/20 via-background/10"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center animate-fade-in-up">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-lg block">nuestra boda</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md">
+                    Silvia &amp; Andres
+                </h1>
+
+<div class="flex items-center space-x-md mb-xl">
+<div class="h-px w-12 bg-primary"></div>
+<span class="font-body-lg text-body-lg text-text-primary tracking-wide">15 DE AGOSTO DE 2026</span>
+<div class="h-px w-12 bg-primary"></div>
+</div>
+<a class="inline-flex items-center justify-center px-12 py-4 bg-primary text-white-soft font-label-caps text-label-caps rounded-xl hover:bg-secondary transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(83,97,59,0.15)] uppercase" href="#countdown">
+                    Ver Invitación
+                </a>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex justify-center">
+<span class="material-symbols-outlined text-primary opacity-70" data-icon="south">south</span>
+</div>
+</section>
+<!-- 2. COUNTDOWN -->
+<section class="py-xxl px-gutter bg-surface-container-low relative" id="countdown">
+<div class="max-w-4xl mx-auto reveal active">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary mb-sm">Faltan</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md md:gap-lg">
+<!-- Days -->
+<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-days">320</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Días</span>
+</div>
+<!-- Hours -->
+<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-hours">14</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Horas</span>
+</div>
+<!-- Minutes -->
+<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-minutes">45</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Minutos</span>
+</div>
+<!-- Seconds -->
+<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-seconds">22</span>
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Segundos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. NUESTRA HISTORIA -->
+<section class="py-xxl px-gutter bg-surface relative" id="historia">
+<div class="max-w-5xl mx-auto reveal active">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary mb-sm">Nuestra Historia</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">
+                    Un viaje que comenzó por casualidad y se convirtió en nuestra aventura favorita. Cada momento nos ha traído a este día que queremos compartir contigo.
+                </p>
+</div>
+<div class="relative border-l border-border-soft md:border-none ml-4 md:ml-0">
+<!-- Item 1 -->
+<div class="mb-xl relative flex flex-col md:flex-row items-center w-full justify-between">
+<div class="absolute w-4 h-4 bg-primary rounded-full left-[-8.5px] md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-surface shadow"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 md:text-right pr-0 md:pr-lg pb-md md:pb-0 w-full">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">El Comienzo</span>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm">Aquel café en Madrid</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                        Todo empezó con una mirada cruzada y un café derramado. Lo que parecía un accidente torpe, se convirtió en la mejor anécdota de nuestras vidas.
+                    </p>
+</div>
+<div class="md:w-2/12 hidden md:block"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 w-full">
+<img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="A warm, candid photo of a couple laughing at a cozy cafe table, soft lighting, film-like aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABYX_ty7donU_-g41Wgza8aMYu1ve6vv5ixUZEPn5jARXME0YL-SPMo4BQZRuf7-LwSCqS2D3esFeE6y0ghAeR-yVZhvzlMap6C0dVmuTNHGj0G5rQRZrfTazjneQ9Nr2Fdsl1acd7b1J8Oubuk-Srg78P_eNQem5Jo--Y9CtnzuiYKufnlLbU5QL3E3hiIhb70iE41buwsSZxZjTXmeqnzNe3mRY8hK8A1VqiIuVwle2g1c5jIEJP91VQXmTUqewVeoqWzYXAqZ95">
+</div>
+</div>
+<!-- Item 2 -->
+<div class="mb-xl relative flex flex-col md:flex-row-reverse items-center w-full justify-between">
+<div class="absolute w-4 h-4 bg-primary rounded-full left-[-8.5px] md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-surface shadow"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 md:text-left pl-0 md:pl-lg pb-md md:pb-0 w-full">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">El Viaje</span>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm">Nuestra primera aventura juntos</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                        Mochilas a la espalda y un mapa sin rumbo fijo por la Toscana. Ahí supimos que, sin importar el destino, el mejor lugar siempre sería juntos.
+                    </p>
+</div>
+<div class="md:w-2/12 hidden md:block"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 w-full">
+<img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="A beautiful landscape shot of rolling hills in Tuscany with a couple walking in the distance, soft sunset light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB40968LmBbMoYCbRTArvSechxIoeVdYFtakFboor20r4W_4uJYdzK-SDdEbAbCoAXEM2g7Avq2Pr8htDKun09lqE6XiGpoLEeIU6pdXvacGr1kb4N2fgvP3kmdtZvqmTx8WD7xs-u7-m5mk4802slTKKmjIRzF2tnutcnWDqVVdz6QU1fBezR5sJ1d9hVTTYpq-dCcEreAP9_fmLNKDYuVeTq2IzlGqIeN5M-CQXFjoUM2sRoiPLLd2PJhlxu-17qdLpyQiXdNltYL">
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex flex-col md:flex-row items-center w-full justify-between">
+<div class="absolute w-4 h-4 bg-primary rounded-full left-[-8.5px] md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-surface shadow"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 md:text-right pr-0 md:pr-lg pb-md md:pb-0 w-full">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">El Sí</span>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm">Bajo un cielo estrellado</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                        Una noche de verano, una pregunta que cambiaría todo y un "sí" que prometió una vida entera de amaneceres compartidos.
+                    </p>
+</div>
+<div class="md:w-2/12 hidden md:block"></div>
+<div class="md:w-5/12 pl-lg md:pl-0 w-full">
+<img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Close up of a couple holding hands showing an engagement ring, warm lighting, elegant and romantic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC299faHzLc_iBCIUqKn3388Oe97F4hr5imd-bfD5eRFTJ2ImaKAJzBOQagNAJD-Lyxhr6wFVdDZX9oNUAHm54xVk-HJ7R7rObJy392pQg5XeECdZxfOznaNRUs1wg35vPmtVcZng2K1OlCDAAJZYCOB2-0a7WJnEjv9GEhLpq3gik-vYK_dcVa4w2Ki_c8C-WRM-F0IJvICQdtnvo62Znk9OKCAFxXPaxNX47iAvwC_4oiC-W3iFnutXoNSApuqX-c-_e4nKWieP72">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. GALERÍA -->
+<section class="py-xxl px-gutter bg-surface-bright relative" id="galeria">
+<div class="max-w-6xl mx-auto reveal active">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary mb-sm">Memorias</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="overflow-hidden rounded-md group">
+<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Couple walking on a beach at sunset, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcw4Hjef6sMadSB8On-8Vg97WaTMz023Bo_2Yof_TF2hBP8JFpuHRJU0pGYi1fVa9waGe-E7-2Q5FOLyebyv0ozF5kEr5hK2FqxHsu-gP26W593-tbLr1HoyObuYDp4NP7bh87uAb--z1vvOuC10-MDQU03pDi-IS1Y82CVKACsmhiYhGX1XmBbaZ28J0MI0fDVmxOsgBNCYgluW_T6tNwl8J1iKeXwYR2IokERBOZMEjvx_3HuWJ3_oAmFvm6tZkt6zCQT06Q_ID5">
+</div>
+<div class="overflow-hidden rounded-md group">
+<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Close up of couple laughing together, natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYpUixm8DcBx5oG46TcHTkO3NGzteOPDaE19sB0CU-x25e286I8EVAajBofQ9kcXE25tbFfVzAE1h91z25r1hOWGn7DxQW2TCC99RkCx_Sst-ZT5lYS5OK8sFUok7SLaQ4gxN8iNHexf5gAdtQTpNPph3t2Zlie-U6xm2a2GNOZ67wumpXwxCwbAXtz6_tvlVjQPvs0v_aErcRFvZcGekgQ5d49QjXbS-rtTEl8RSXrvXL9Y-R0RysTj7po5my7osD4twlEhgF8GPc">
+</div>
+<div class="overflow-hidden rounded-md group">
+<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Couple dancing in a field, elegant attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeE9YVVTrqTT0z_Wd_tVbhjKIPXCOyS9my3M0Q7sOJheeoG49g8kGn-pzZBbuRAMTwFMIpkNGP4s7DxV8VHEErZ4ihemXVEIFe5Gafdf_xerUspIzNclWbwqeKqgaqq5uDTczlhLycruzwKdTQ3Lwbyx9Sq96JpcZ4I5SbSB92YRFXK9HFLSlkngTAti70A-vs-Usqxb4DGCkNG8R5H6F-rXaSajLfE-6THSkcOXj9JLBXsF_9wmlvwa9L_TG0hy9ng-8VaE4fq2W9">
+</div>
+<div class="overflow-hidden rounded-md group md:col-span-2 lg:col-span-1">
+<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Black and white portrait of the couple hugging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOje0VpRmDNfbkW-bAv45LgMwpgDt-ltV56KgogGw5BzkYbFs4mm3XI0zZuCpn2Px0i8sqYQE4dQB-eq7x6mtDuLUxR6IV62Tv47mTh5QNFNpOrxocKxB8AY-aik5pp1ue7WuHkP6M0N9_CKf7ZrOAFx2rCX3GhPNy-zAdX7GeB3rUJRYNMNjeKL8BQtrISzNwwWtirORNQN1UgYPjJwXvZrI89txcbnz8buh91jr6pnevCh2I7nhGe3M_XevsTwMoYysVVCjN6Pn">
+</div>
+<div class="overflow-hidden rounded-md group lg:col-span-2">
+<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Wide shot of couple in a historic European city street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ZF6pLHOAs3-dtUCgEfjUpBOEY05eRJdpzju-n0WyXn-RaFCRYz5deGync9lZGaHnctcDPpelorrEAvan5N7WmM5vtolAzajq8yYvDchuU2RakwadmJ-ARUzhysAMAm8iPCMEoIW86DNeTbGdxxqIwau_LsuM-ROPawPdrvQejIGA8BO7CbxXJHE23r5lAWS09U44qd3_-hbNKWTYrRAyOVCgWmJIVaIjIRUSac7EW8MxwsUcFgmdDS1_LCUvWMNicm_Z_6TpcyRb">
+</div>
+</div>
+</div>
+</section>
+<!-- 5. CEREMONIA Y RECEPCIÓN -->
+<section class="py-xxl px-gutter bg-surface-container-low relative" id="lugares">
+<div class="max-w-5xl mx-auto reveal active">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary mb-sm">Dónde y Cuándo</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Ceremonia Card -->
+<div class="bg-white-soft p-lg rounded-xl shadow-sm border border-border-soft flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-md" data-icon="church">church</span>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm">Ceremonia</h3>
+<p class="font-body-lg text-body-lg text-text-secondary font-medium mb-xs">Capilla de las Nieves</p>
+<p class="font-body-md text-body-md text-text-secondary mb-md">Calle de los Cerezos 123, Ciudad<br>17:00 HRS</p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-caps text-label-caps uppercase border-b border-primary pb-1" href="#" target="_blank">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="">Ver en Mapa</span>
+</a>
+<div class="w-full h-48 mt-lg bg-surface-dim rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 flex items-center justify-center text-text-secondary font-label-caps text-label-caps">
+        [Mapa Interactivo Integrado]
+    </div>
+</div>
+</div>
+<!-- Recepción Card -->
+<div class="bg-white-soft p-lg rounded-xl shadow-sm border border-border-soft flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-md" data-icon="celebration">celebration</span>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm">Recepción</h3>
+<p class="font-body-lg text-body-lg text-text-secondary font-medium mb-xs">Casa Terma</p>
+<p class="font-body-md text-body-md text-text-secondary mb-md">Camino Real s/n, A las afueras<br>19:00 HRS</p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-caps text-label-caps uppercase border-b border-primary pb-1" href="#" target="_blank">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="">Ver en Mapa</span>
+</a>
+<div class="w-full h-48 mt-lg bg-surface-dim rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 flex items-center justify-center text-text-secondary font-label-caps text-label-caps">
+        [Mapa Interactivo Integrado]
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. ITINERARIO -->
+<section class="py-xxl px-gutter bg-surface relative" id="itinerario">
+<div class="max-w-3xl mx-auto reveal active">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary mb-sm">El Gran Día</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto"></div>
+</div>
+<div class="relative border-l border-primary/30 ml-4 md:ml-1/2 md:translate-x-[-1px]">
+<!-- Timeline Item 1 -->
+<div class="mb-lg relative flex items-center pl-lg md:pl-0">
+<div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
+<div class="w-full md:w-1/2 md:pr-lg md:text-right">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">17:00 HRS</span>
+<h4 class="font-h3 text-xl text-text-primary">Ceremonia</h4>
+</div>
+<div class="hidden md:block w-1/2 pl-lg"></div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="mb-lg relative flex items-center pl-lg md:pl-0">
+<div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
+<div class="hidden md:block w-1/2 pr-lg text-right"></div>
+<div class="w-full md:w-1/2 md:pl-lg">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">18:30 HRS</span>
+<h4 class="font-h3 text-xl text-text-primary">Cóctel de Bienvenida</h4>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="mb-lg relative flex items-center pl-lg md:pl-0">
+<div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
+<div class="w-full md:w-1/2 md:pr-lg md:text-right">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">20:00 HRS</span>
+<h4 class="font-h3 text-xl text-text-primary">Cena</h4>
+</div>
+<div class="hidden md:block w-1/2 pl-lg"></div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="mb-lg relative flex items-center pl-lg md:pl-0">
+<div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
+<div class="hidden md:block w-1/2 pr-lg text-right"></div>
+<div class="w-full md:w-1/2 md:pl-lg">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">22:00 HRS</span>
+<h4 class="font-h3 text-xl text-text-primary">Primer Baile</h4>
+</div>
+</div>
+<!-- Timeline Item 5 -->
+<div class="relative flex items-center pl-lg md:pl-0">
+<div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
+<div class="w-full md:w-1/2 md:pr-lg md:text-right">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">22:30 HRS</span>
+<h4 class="font-h3 text-xl text-text-primary">¡Fiesta!</h4>
+</div>
+<div class="hidden md:block w-1/2 pl-lg"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CÓDIGO DE VESTIMENTA -->
+<section class="py-xxl px-gutter bg-surface-bright relative text-center">
+<div class="max-w-2xl mx-auto reveal active">
+<span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="styler">styler</span>
+<h2 class="font-h2 text-h2 text-primary mb-sm">Código de Vestimenta</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
+<h3 class="font-h3 text-2xl text-text-primary mb-md">Formal Elegante</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-md">
+                Sugerimos tonos tierra, oliva, beige y champagne para mantener la armonía de nuestro día especial.
+            </p>
+<div class="flex justify-center space-x-4 mt-lg">
+<div class="w-8 h-8 rounded-full bg-[#8B7355] shadow-sm border border-border-soft"></div>
+<div class="w-8 h-8 rounded-full bg-[#6B7A52] shadow-sm border border-border-soft"></div>
+<div class="w-8 h-8 rounded-full bg-[#D9CBB8] shadow-sm border border-border-soft"></div>
+<div class="w-8 h-8 rounded-full bg-[#F3E5AB] shadow-sm border border-border-soft"></div>
+</div>
+</div>
+</section>
+<!-- 8. REGALOS -->
+<section class="py-xxl px-gutter bg-surface-container-low relative" id="regalos">
+<div class="max-w-3xl mx-auto reveal text-center active">
+<span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="mail">mail</span>
+<h2 class="font-h2 text-h2 text-primary mb-sm">Regalos</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
+<p class="font-body-lg text-body-lg text-text-secondary mb-xl">
+                Su presencia es nuestro mayor regalo. Si desean tener un detalle adicional con nosotros, agradeceremos su aporte a nuestra "Lluvia de Sobres" el día del evento para construir nuestro nuevo hogar.
+            </p>
+<div class="inline-block p-lg border border-accent-sand rounded-xl bg-white-soft shadow-sm">
+<p class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Lluvia de Sobres</p>
+</div>
+</div>
+</section>
+<!-- 9. MÚSICA -->
+<section class="py-xxl px-gutter bg-surface relative">
+<div class="max-w-2xl mx-auto reveal text-center active">
+<span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="music_note">music_note</span>
+<h2 class="font-h2 text-h2 text-primary mb-sm">Nuestra Playlist</h2>
+<div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
+<p class="font-body-md text-body-md text-text-secondary mb-lg">
+                Vayan entrando en ambiente con las canciones que nos han acompañado. ¡Y prepárense para bailar!
+            </p>
+<div class="w-full bg-surface-dim rounded-xl h-64 flex items-center justify-center border border-border-soft shadow-inner">
+<span class="font-label-caps text-label-caps text-text-secondary">[Reproductor de Spotify Integrado]</span>
+</div>
+</div>
+</section>
+<!-- 10. MENSAJE FINAL -->
+<section class="py-xxl px-gutter bg-primary text-center relative overflow-hidden">
+<!-- Background overlay for texture -->
+<div class="absolute inset-0 bg-black/10 z-0"></div>
+<div class="relative z-10 max-w-3xl mx-auto reveal text-white-soft active">
+<h2 class="font-h1 text-h1 mb-md">¡Te esperamos!</h2>
+<p class="font-h3 text-h3 text-primary-container-low mb-0 italic">
+                Para celebrar el amor, la vida y todo lo que está por venir.
+            </p>
+</div>
+</section>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-low py-xxl px-gutter flex flex-col items-center text-center space-y-lg w-full reveal active">
+<h2 class="font-h2 text-h2 text-primary">Con amor, Silvia &amp; Andres — 2026</h2>
+<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#historia">Nuestra Historia</a>
+<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#galeria">Galería</a>
+<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#">Contacto</a>
+</div>
+</footer>
+</main>
+<script>
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Navigation Active State Logic - Simple observer for demo
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('#main-nav a[href^="#"]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'font-bold', 'border-b', 'border-primary');
+                link.classList.add('text-text-secondary');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-text-secondary');
+                    link.classList.add('text-primary', 'font-bold', 'border-b', 'border-primary');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>
