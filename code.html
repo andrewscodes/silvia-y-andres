@@ -83,7 +83,7 @@
                         "sm": "8px"
                     },
                     fontFamily: {
-                        "h2": ["Playfair Display"],
+                        "h2": ["Pinyon Script", "cursive"],
                         "h3": ["Cormorant Garamond"],
                         "body-lg": ["Inter"],
                         "headline-lg": ["Playfair Display"],
@@ -95,7 +95,7 @@
                         "label-caps": ["Poppins"]
                     },
                     fontSize: {
-                        "h2": ["3rem", { lineHeight: "1.2", fontWeight: "500" }],
+                        "h2": ["4rem", { lineHeight: "1.2", fontWeight: "400" }],
                         "h3": ["2rem", { lineHeight: "1.3", fontWeight: "500" }],
                         "body-lg": ["1.125rem", { lineHeight: "1.8", fontWeight: "400" }],
                         "headline-lg": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "600" }],
@@ -126,12 +126,20 @@
         }
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
+            transform: translateY(40px);
+            transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
         /* Hide scrollbar for clean look */
         ::-webkit-scrollbar {
@@ -157,55 +165,49 @@
 <section class="relative min-h-screen flex items-center justify-center px-gutter overflow-hidden pt-xxl">
 <!-- Background Image -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover object-center opacity-70 max-sm:object-[75%_center]" data-alt="A soft, cinematic wide shot of an empty, elegant outdoor wedding aisle in a European garden. The path is lined with subtle white floral arrangements and olive branches. The lighting is golden hour, creating a warm, romantic, and serene light-mode aesthetic with a palette of olive greens, warm whites, and soft beige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8C5dazZBNDAKugsDOZof294vaf14B782ohbOCKd-jkF3YJm_6habF8od6DdCqwaEDev7fnhDY0VwCIfumg_NpY9hvKWGWNmDVMyCP-Qa16avDs_1MbF0Yzemo2t-JSVMZVTi2Ys9e94sQGrS0t4qatyWj0Lyx1M8EsgVRZWxMVhnPVrjHGAMdbcA9VZbzeqsKEUb01e18n5HRygBVrKJIdqB_jxkCPjQMdZHp4T25Qh2noS7UFcswEuuWt5-RZjWrsYNOfVR8qMsyqY">
+<img class="w-full h-full object-cover object-center opacity-70 max-sm:object-[75%_center]" data-alt="A soft, cinematic wide shot of an empty, elegant outdoor wedding aisle in a European garden. The path is lined with subtle white floral arrangements and olive branches. The lighting is golden hour, creating a warm, romantic, and serene light-mode aesthetic with a palette of olive greens, warm whites, and soft beige." src="./assets/background.jpg">
 <!-- Subtle Gradient Overlay -->
 <div class="absolute inset-0 bg-gradient-to-b to-background from-background/20 via-background/10"></div>
 </div>
 <div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center animate-fade-in-up">
-<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-lg block">nuestra boda</span>
-<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-xl block">nuestra boda</span>
+<h1 class="text-primary mb-xl" style="font-family: 'Pinyon Script', cursive; font-size: 6rem; line-height: 1.1; font-weight: 400;">
                     Silvia &amp; Andres
                 </h1>
 
-<div class="flex items-center space-x-md mb-xl">
-<div class="h-px w-12 bg-primary"></div>
-<span class="font-body-lg text-body-lg text-text-primary tracking-wide">15 DE AGOSTO DE 2026</span>
-<div class="h-px w-12 bg-primary"></div>
+<div class="flex items-center space-x-md mb-xl mt-lg">
+<span class="font-body-lg text-body-lg text-primary tracking-wide">15 DE AGOSTO DE 2026</span>
 </div>
-<a class="inline-flex items-center justify-center px-12 py-4 bg-primary text-white-soft font-label-caps text-label-caps rounded-xl hover:bg-secondary transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(83,97,59,0.15)] uppercase" href="#countdown">
+<a class="inline-flex items-center justify-center px-12 py-4 bg-primary text-white-soft font-label-caps text-label-caps rounded-xl hover:bg-secondary transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(83,97,59,0.15)] uppercase mt-lg" href="#countdown">
                     Ver Invitación
                 </a>
-</div>
-<!-- Scroll Indicator -->
-<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex justify-center">
-<span class="material-symbols-outlined text-primary opacity-70" data-icon="south">south</span>
 </div>
 </section>
 <!-- 2. COUNTDOWN -->
 <section class="py-xxl px-gutter bg-surface-container-low relative" id="countdown">
-<div class="max-w-4xl mx-auto reveal active">
+<div class="max-w-4xl mx-auto reveal">
 <div class="text-center mb-xl">
 <h2 class="font-h2 text-h2 text-primary mb-sm">Faltan</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto"></div>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-md md:gap-lg">
 <!-- Days -->
-<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<div class="bg-white-soft rounded-lg py-md px-sm text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center">
 <span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-days">320</span>
 <span class="font-label-caps text-label-caps text-text-secondary uppercase">Días</span>
 </div>
 <!-- Hours -->
-<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<div class="bg-white-soft rounded-lg py-md px-sm text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center">
 <span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-hours">14</span>
 <span class="font-label-caps text-label-caps text-text-secondary uppercase">Horas</span>
 </div>
 <!-- Minutes -->
-<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<div class="bg-white-soft rounded-lg py-md px-sm text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center">
 <span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-minutes">45</span>
 <span class="font-label-caps text-label-caps text-text-secondary uppercase">Minutos</span>
 </div>
 <!-- Seconds -->
-<div class="bg-white-soft rounded-lg p-lg text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center aspect-square">
+<div class="bg-white-soft rounded-lg py-md px-sm text-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-border-soft flex flex-col justify-center items-center">
 <span class="font-headline-md text-headline-md text-primary mb-xs" id="cd-seconds">22</span>
 <span class="font-label-caps text-label-caps text-text-secondary uppercase">Segundos</span>
 </div>
@@ -214,7 +216,7 @@
 </section>
 <!-- 3. NUESTRA HISTORIA -->
 <section class="py-xxl px-gutter bg-surface relative" id="historia">
-<div class="max-w-5xl mx-auto reveal active">
+<div class="max-w-5xl mx-auto reveal">
 <div class="text-center mb-xl">
 <h2 class="font-h2 text-h2 text-primary mb-sm">Nuestra Historia</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
@@ -273,7 +275,7 @@
 </section>
 <!-- 4. GALERÍA -->
 <section class="py-xxl px-gutter bg-surface-bright relative" id="galeria">
-<div class="max-w-6xl mx-auto reveal active">
+<div class="max-w-6xl mx-auto reveal">
 <div class="text-center mb-xl">
 <h2 class="font-h2 text-h2 text-primary mb-sm">Memorias</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto"></div>
@@ -299,7 +301,7 @@
 </section>
 <!-- 5. CEREMONIA Y RECEPCIÓN -->
 <section class="py-xxl px-gutter bg-surface-container-low relative" id="lugares">
-<div class="max-w-5xl mx-auto reveal active">
+<div class="max-w-5xl mx-auto reveal">
 <div class="text-center mb-xl">
 <h2 class="font-h2 text-h2 text-primary mb-sm">Dónde y Cuándo</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto"></div>
@@ -315,11 +317,6 @@
 <span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
 <span class="">Ver en Mapa</span>
 </a>
-<div class="w-full h-48 mt-lg bg-surface-dim rounded-lg overflow-hidden relative">
-<div class="absolute inset-0 flex items-center justify-center text-text-secondary font-label-caps text-label-caps">
-        [Mapa Interactivo Integrado]
-    </div>
-</div>
 </div>
 <!-- Recepción Card -->
 <div class="bg-white-soft p-lg rounded-xl shadow-sm border border-border-soft flex flex-col items-center text-center">
@@ -331,18 +328,13 @@
 <span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
 <span class="">Ver en Mapa</span>
 </a>
-<div class="w-full h-48 mt-lg bg-surface-dim rounded-lg overflow-hidden relative">
-<div class="absolute inset-0 flex items-center justify-center text-text-secondary font-label-caps text-label-caps">
-        [Mapa Interactivo Integrado]
-    </div>
-</div>
 </div>
 </div>
 </div>
 </section>
 <!-- 6. ITINERARIO -->
 <section class="py-xxl px-gutter bg-surface relative" id="itinerario">
-<div class="max-w-3xl mx-auto reveal active">
+<div class="max-w-3xl mx-auto reveal">
 <div class="text-center mb-xl">
 <h2 class="font-h2 text-h2 text-primary mb-sm">El Gran Día</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto"></div>
@@ -398,7 +390,7 @@
 </section>
 <!-- 7. CÓDIGO DE VESTIMENTA -->
 <section class="py-xxl px-gutter bg-surface-bright relative text-center">
-<div class="max-w-2xl mx-auto reveal active">
+<div class="max-w-2xl mx-auto reveal">
 <span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="styler">styler</span>
 <h2 class="font-h2 text-h2 text-primary mb-sm">Código de Vestimenta</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
@@ -416,7 +408,7 @@
 </section>
 <!-- 8. REGALOS -->
 <section class="py-xxl px-gutter bg-surface-container-low relative" id="regalos">
-<div class="max-w-3xl mx-auto reveal text-center active">
+<div class="max-w-3xl mx-auto reveal text-center">
 <span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="mail">mail</span>
 <h2 class="font-h2 text-h2 text-primary mb-sm">Regalos</h2>
 <div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
@@ -428,56 +420,40 @@
 </div>
 </div>
 </section>
-<!-- 9. MÚSICA -->
-<section class="py-xxl px-gutter bg-surface relative">
-<div class="max-w-2xl mx-auto reveal text-center active">
-<span class="material-symbols-outlined text-primary text-4xl mb-md block mx-auto" data-icon="music_note">music_note</span>
-<h2 class="font-h2 text-h2 text-primary mb-sm">Nuestra Playlist</h2>
-<div class="w-16 h-px bg-accent-sand mx-auto mb-lg"></div>
-<p class="font-body-md text-body-md text-text-secondary mb-lg">
-                Vayan entrando en ambiente con las canciones que nos han acompañado. ¡Y prepárense para bailar!
-            </p>
-<div class="w-full bg-surface-dim rounded-xl h-64 flex items-center justify-center border border-border-soft shadow-inner">
-<span class="font-label-caps text-label-caps text-text-secondary">[Reproductor de Spotify Integrado]</span>
-</div>
-</div>
-</section>
 <!-- 10. MENSAJE FINAL -->
 <section class="py-xxl px-gutter bg-primary text-center relative overflow-hidden">
 <!-- Background overlay for texture -->
 <div class="absolute inset-0 bg-black/10 z-0"></div>
-<div class="relative z-10 max-w-3xl mx-auto reveal text-white-soft active">
+<div class="relative z-10 max-w-3xl mx-auto reveal text-white-soft">
 <h2 class="font-h1 text-h1 mb-md">¡Te esperamos!</h2>
 <p class="font-h3 text-h3 text-primary-container-low mb-0 italic">
                 Para celebrar el amor, la vida y todo lo que está por venir.
             </p>
 </div>
 </section>
-<!-- Footer Shared Component -->
-<footer class="bg-surface-container-low py-xxl px-gutter flex flex-col items-center text-center space-y-lg w-full reveal active">
-<h2 class="font-h2 text-h2 text-primary">Con amor, Silvia &amp; Andres — 2026</h2>
-<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#historia">Nuestra Historia</a>
-<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#galeria">Galería</a>
-<a class="text-text-secondary hover:text-primary transition-all font-label-caps text-label-caps uppercase" href="#">Contacto</a>
-</div>
-</footer>
+<!-- Background music -->
+<audio id="bg-music" src="assets/song.mp3" loop preload="auto"></audio>
+<button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary text-white-soft shadow-lg hover:bg-secondary transition-all flex items-center justify-center" aria-label="Reproducir música">
+<span class="material-symbols-outlined" id="music-icon" data-icon="music_off">music_off</span>
+</button>
 </main>
 <script>
-        // Scroll Reveal Logic
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
+        // Scroll Reveal Logic — IntersectionObserver
+        const revealEls = document.querySelectorAll(".reveal");
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
+            revealEls.forEach(el => revealObserver.observe(el));
+        } else {
+            // Fallback for very old browsers
+            revealEls.forEach(el => el.classList.add("active"));
         }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
 
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
@@ -509,6 +485,93 @@
                     link.classList.add('text-primary', 'font-bold', 'border-b', 'border-primary');
                 }
             });
+        });
+
+        // Countdown to August 15, 2026 at 2:00 PM (local time)
+        const weddingDate = new Date(2026, 7, 15, 14, 0, 0).getTime();
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMinutes = document.getElementById('cd-minutes');
+        const cdSeconds = document.getElementById('cd-seconds');
+
+        function updateCountdown() {
+            const now = Date.now();
+            const diff = weddingDate - now;
+
+            if (diff <= 0) {
+                cdDays.textContent = '0';
+                cdHours.textContent = '0';
+                cdMinutes.textContent = '0';
+                cdSeconds.textContent = '0';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            cdDays.textContent = days;
+            cdHours.textContent = hours;
+            cdMinutes.textContent = minutes;
+            cdSeconds.textContent = seconds;
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Background music with autoplay + toggle
+        const bgMusic = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        bgMusic.volume = 0.5;
+
+        function setIcon(playing) {
+            musicIcon.textContent = playing ? 'music_note' : 'music_off';
+            musicToggle.setAttribute('aria-label', playing ? 'Silenciar música' : 'Reproducir música');
+        }
+
+        let userPaused = false;
+
+        function tryPlay() {
+            if (userPaused) return;
+            bgMusic.play().then(() => setIcon(true)).catch(() => setIcon(false));
+        }
+
+        // Trigger music when the "Faltan" (countdown) section enters the viewport
+        const countdownSection = document.getElementById('countdown');
+        if (countdownSection && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && bgMusic.paused && !userPaused) {
+                        tryPlay();
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(countdownSection);
+        }
+
+        // Fallback: start on first user interaction if browser blocked autoplay
+        function startOnInteract() {
+            if (bgMusic.paused && !userPaused) tryPlay();
+            document.removeEventListener('click', startOnInteract);
+            document.removeEventListener('touchstart', startOnInteract);
+        }
+        document.addEventListener('click', startOnInteract);
+        document.addEventListener('touchstart', startOnInteract);
+
+        // Manual toggle
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (bgMusic.paused) {
+                userPaused = false;
+                bgMusic.play().then(() => setIcon(true)).catch(() => {});
+            } else {
+                userPaused = true;
+                bgMusic.pause();
+                setIcon(false);
+            }
         });
     </script>
 
