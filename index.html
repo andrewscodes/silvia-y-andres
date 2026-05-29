@@ -5,7 +5,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Poppins:wght@300;400;500&amp;family=EB+Garamond:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Poppins:wght@300;400;500&amp;family=EB+Garamond:wght@400;500&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
@@ -84,15 +84,15 @@
                     },
                     fontFamily: {
                         "h2": ["Pinyon Script", "cursive"],
-                        "h3": ["Cormorant Garamond"],
-                        "body-lg": ["Inter"],
-                        "headline-lg": ["Playfair Display"],
-                        "h1": ["Playfair Display"],
-                        "headline-sm": ["EB Garamond"],
-                        "headline-md": ["Playfair Display"],
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "body-md": ["Inter"],
-                        "label-caps": ["Poppins"]
+                        "h3": ["Lora", "serif"],
+                        "body-lg": ["Lora", "serif"],
+                        "headline-lg": ["Lora", "serif"],
+                        "h1": ["Lora", "serif"],
+                        "headline-sm": ["Lora", "serif"],
+                        "headline-md": ["Lora", "serif"],
+                        "headline-lg-mobile": ["Lora", "serif"],
+                        "body-md": ["Lora", "serif"],
+                        "label-caps": ["Lora", "serif"]
                     },
                     fontSize: {
                         "h2": ["4rem", { lineHeight: "1.2", fontWeight: "400" }],
@@ -169,21 +169,21 @@
 <!-- Subtle Gradient Overlay -->
 <div class="absolute inset-0 bg-gradient-to-b to-background from-background/20 via-background/10"></div>
 </div>
-<div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center animate-fade-in-up">
-<span class="font-body-lg text-body-lg text-primary tracking-widest uppercase mb-sm block">nos casamos</span>
-<h1 class="text-primary mb-sm" style="font-family: 'Pinyon Script', cursive; font-size: 4rem; line-height: 1.5; font-weight: 500;">
+<div class="relative bottom-40 z-10 text-center max-w-4xl mx-auto flex flex-col items-center animate-fade-in-up">
+<span class="font-body-lg text-xl font-semibold text-primary -translate-y-10 tracking-widest uppercase mb-sm block">nos casamos</span>
+<h1 class="text-primary mb-sm" style="font-family: 'Pinyon Script', cursive; font-size: 4rem; line-height: 1.1; font-weight: 500;">
                     Silvia &amp; Andres
                 </h1>
 
-<div class="flex items-center space-x-md mb-xl">
-<span class="font-body-lg text-body-lg text-primary tracking-widest uppercase">15 DE AGOSTO 2026</span>
+<div class="flex items-center space-x-md">
+<span class="font-body-lg text-xl font-semibold text-primary tracking-widest uppercase">15 DE AGOSTO 2026</span>
 </div>
-<a class="group inline-flex flex-col items-center justify-center text-primary hover:text-secondary transition-colors animate-bounce" aria-label="Deslizar para ver la invitación" href="#countdown">
+</div>
+<a class="group absolute bottom-xl left-1/2 -translate-x-1/2 z-10 inline-flex flex-col items-center justify-center text-primary hover:text-secondary transition-colors animate-bounce" aria-label="Deslizar para ver la invitación" href="#countdown">
 <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 </a>
-</div>
 </section>
 <!-- 2. COUNTDOWN -->
 <section class="py-xxl px-gutter bg-surface-container-low relative" id="countdown">
@@ -266,32 +266,6 @@ En la playa, bajo un atardecer inolvidable</p>
 <div class="md:w-5/12 pl-lg md:pl-0 w-full">
 <img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Close up of a couple holding hands showing an engagement ring, warm lighting, elegant and romantic" src="./assets/3.jpg">
 </div>
-</div>
-</div>
-</div>
-</section>
-<!-- 4. GALERÍA -->
-<section class="py-xxl px-gutter bg-surface-bright relative" id="galeria">
-<div class="max-w-6xl mx-auto reveal">
-<div class="text-center mb-xl">
-<h2 class="font-h2 text-h2 text-primary mb-sm">Memorias</h2>
-<div class="w-16 h-px bg-accent-sand mx-auto"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-<div class="overflow-hidden rounded-md group">
-<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Couple walking on a beach at sunset, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcw4Hjef6sMadSB8On-8Vg97WaTMz023Bo_2Yof_TF2hBP8JFpuHRJU0pGYi1fVa9waGe-E7-2Q5FOLyebyv0ozF5kEr5hK2FqxHsu-gP26W593-tbLr1HoyObuYDp4NP7bh87uAb--z1vvOuC10-MDQU03pDi-IS1Y82CVKACsmhiYhGX1XmBbaZ28J0MI0fDVmxOsgBNCYgluW_T6tNwl8J1iKeXwYR2IokERBOZMEjvx_3HuWJ3_oAmFvm6tZkt6zCQT06Q_ID5">
-</div>
-<div class="overflow-hidden rounded-md group">
-<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Close up of couple laughing together, natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYpUixm8DcBx5oG46TcHTkO3NGzteOPDaE19sB0CU-x25e286I8EVAajBofQ9kcXE25tbFfVzAE1h91z25r1hOWGn7DxQW2TCC99RkCx_Sst-ZT5lYS5OK8sFUok7SLaQ4gxN8iNHexf5gAdtQTpNPph3t2Zlie-U6xm2a2GNOZ67wumpXwxCwbAXtz6_tvlVjQPvs0v_aErcRFvZcGekgQ5d49QjXbS-rtTEl8RSXrvXL9Y-R0RysTj7po5my7osD4twlEhgF8GPc">
-</div>
-<div class="overflow-hidden rounded-md group">
-<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Couple dancing in a field, elegant attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeE9YVVTrqTT0z_Wd_tVbhjKIPXCOyS9my3M0Q7sOJheeoG49g8kGn-pzZBbuRAMTwFMIpkNGP4s7DxV8VHEErZ4ihemXVEIFe5Gafdf_xerUspIzNclWbwqeKqgaqq5uDTczlhLycruzwKdTQ3Lwbyx9Sq96JpcZ4I5SbSB92YRFXK9HFLSlkngTAti70A-vs-Usqxb4DGCkNG8R5H6F-rXaSajLfE-6THSkcOXj9JLBXsF_9wmlvwa9L_TG0hy9ng-8VaE4fq2W9">
-</div>
-<div class="overflow-hidden rounded-md group md:col-span-2 lg:col-span-1">
-<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Black and white portrait of the couple hugging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOje0VpRmDNfbkW-bAv45LgMwpgDt-ltV56KgogGw5BzkYbFs4mm3XI0zZuCpn2Px0i8sqYQE4dQB-eq7x6mtDuLUxR6IV62Tv47mTh5QNFNpOrxocKxB8AY-aik5pp1ue7WuHkP6M0N9_CKf7ZrOAFx2rCX3GhPNy-zAdX7GeB3rUJRYNMNjeKL8BQtrISzNwwWtirORNQN1UgYPjJwXvZrI89txcbnz8buh91jr6pnevCh2I7nhGe3M_XevsTwMoYysVVCjN6Pn">
-</div>
-<div class="overflow-hidden rounded-md group lg:col-span-2">
-<img class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Wide shot of couple in a historic European city street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ZF6pLHOAs3-dtUCgEfjUpBOEY05eRJdpzju-n0WyXn-RaFCRYz5deGync9lZGaHnctcDPpelorrEAvan5N7WmM5vtolAzajq8yYvDchuU2RakwadmJ-ARUzhysAMAm8iPCMEoIW86DNeTbGdxxqIwau_LsuM-ROPawPdrvQejIGA8BO7CbxXJHE23r5lAWS09U44qd3_-hbNKWTYrRAyOVCgWmJIVaIjIRUSac7EW8MxwsUcFgmdDS1_LCUvWMNicm_Z_6TpcyRb">
 </div>
 </div>
 </div>
@@ -442,7 +416,7 @@ En la playa, bajo un atardecer inolvidable</p>
 <div class="absolute inset-0 bg-black/10 z-0"></div>
 <div class="relative z-10 max-w-3xl mx-auto reveal text-white-soft flex flex-col items-center">
 <img src="assets/cake.JPG" alt="Pastel de boda" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-white-soft/40 mb-xl">
-<h2 class="font-h2 text-h1 mb-md">¡Te esperamos!</h2>
+<h2 class="font-h2 text-h1 font-normal mb-md">¡Te esperamos!</h2>
 </div>
 </section>
 <!-- Background music -->
