@@ -76,7 +76,7 @@
                         "gutter": "24px",
                         "margin-safe": "24px",
                         "lg": "32px",
-                        "xxl": "120px",
+                        "xxl": "56px",
                         "xs": "4px",
                         "xl": "64px",
                         "md": "16px",
@@ -170,17 +170,19 @@
 <div class="absolute inset-0 bg-gradient-to-b to-background from-background/20 via-background/10"></div>
 </div>
 <div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center animate-fade-in-up">
-<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-xl block">nuestra boda</span>
-<h1 class="text-primary mb-xl" style="font-family: 'Pinyon Script', cursive; font-size: 6rem; line-height: 1.1; font-weight: 400;">
+<span class="font-body-lg text-body-lg text-primary tracking-widest uppercase mb-sm block">nos casamos</span>
+<h1 class="text-primary mb-sm" style="font-family: 'Pinyon Script', cursive; font-size: 4rem; line-height: 1.5; font-weight: 500;">
                     Silvia &amp; Andres
                 </h1>
 
-<div class="flex items-center space-x-md mb-xl mt-lg">
-<span class="font-body-lg text-body-lg text-primary tracking-wide">15 DE AGOSTO DE 2026</span>
+<div class="flex items-center space-x-md mb-xl">
+<span class="font-body-lg text-body-lg text-primary tracking-widest uppercase">15 DE AGOSTO 2026</span>
 </div>
-<a class="inline-flex items-center justify-center px-12 py-4 bg-primary text-white-soft font-label-caps text-label-caps rounded-xl hover:bg-secondary transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(83,97,59,0.15)] uppercase mt-lg" href="#countdown">
-                    Ver Invitación
-                </a>
+<a class="group inline-flex flex-col items-center justify-center text-primary hover:text-secondary transition-colors animate-bounce" aria-label="Deslizar para ver la invitación" href="#countdown">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
 </div>
 </section>
 <!-- 2. COUNTDOWN -->
@@ -242,9 +244,9 @@ Aquella comida en Buona pasta</p>
 <div class="mb-xl relative flex flex-col md:flex-row-reverse items-center w-full justify-between">
 <div class="absolute w-4 h-4 bg-primary rounded-full left-[-8.5px] md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-surface shadow"></div>
 <div class="md:w-5/12 pl-lg md:pl-0 md:text-left pl-0 md:pl-lg pb-md md:pb-0 w-full">
-<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">El primer si</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">El primer sí</span>
 <p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">
-Cuando nos hicimos novios</p>
+Donde empezó nuestro amor</p>
 </div>
 <div class="md:w-2/12 hidden md:block"></div>
 <div class="md:w-5/12 pl-lg md:pl-0 w-full">
@@ -262,7 +264,7 @@ En la playa, bajo un atardecer inolvidable</p>
 </div>
 <div class="md:w-2/12 hidden md:block"></div>
 <div class="md:w-5/12 pl-lg md:pl-0 w-full">
-<img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Close up of a couple holding hands showing an engagement ring, warm lighting, elegant and romantic" src="./assets/3.JPG">
+<img class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Close up of a couple holding hands showing an engagement ring, warm lighting, elegant and romantic" src="./assets/3.jpg">
 </div>
 </div>
 </div>
@@ -367,7 +369,7 @@ En la playa, bajo un atardecer inolvidable</p>
 <div class="absolute w-3 h-3 bg-primary rounded-full left-[-6.5px] md:left-1/2 md:-translate-x-1/2"></div>
 <div class="w-full md:w-1/2 md:pr-lg md:text-right">
 <span class="font-label-caps text-label-caps text-text-secondary uppercase mb-1 block">8:00 PM</span>
-<h4 class="font-h3 text-xl text-text-primary">¡Fiesta!</h4>
+<h4 class="font-h3 text-xl text-text-primary">Fiesta!</h4>
 </div>
 <div class="hidden md:block w-1/2 pl-lg"></div>
 </div>
@@ -533,7 +535,7 @@ En la playa, bajo un atardecer inolvidable</p>
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 1000);
 
-        // Background music with autoplay + toggle
+        // Background music - manual toggle only
         const bgMusic = document.getElementById('bg-music');
         const musicToggle = document.getElementById('music-toggle');
         const musicIcon = document.getElementById('music-icon');
@@ -541,46 +543,15 @@ En la playa, bajo un atardecer inolvidable</p>
 
         function setIcon(playing) {
             musicIcon.textContent = playing ? 'music_note' : 'music_off';
-            musicToggle.setAttribute('aria-label', playing ? 'Silenciar música' : 'Reproducir música');
+            musicToggle.setAttribute('aria-label', playing ? 'Silenciar mÃºsica' : 'Reproducir mÃºsica');
         }
 
-        let userPaused = false;
-
-        function tryPlay() {
-            if (userPaused) return;
-            bgMusic.play().then(() => setIcon(true)).catch(() => setIcon(false));
-        }
-
-        // Trigger music when the "Faltan" (countdown) section enters the viewport
-        const countdownSection = document.getElementById('countdown');
-        if (countdownSection && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && bgMusic.paused && !userPaused) {
-                        tryPlay();
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(countdownSection);
-        }
-
-        // Fallback: start on first user interaction if browser blocked autoplay
-        function startOnInteract() {
-            if (bgMusic.paused && !userPaused) tryPlay();
-            document.removeEventListener('click', startOnInteract);
-            document.removeEventListener('touchstart', startOnInteract);
-        }
-        document.addEventListener('click', startOnInteract);
-        document.addEventListener('touchstart', startOnInteract);
-
-        // Manual toggle
+        // Manual toggle — music only plays when the button is pressed
         musicToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             if (bgMusic.paused) {
-                userPaused = false;
                 bgMusic.play().then(() => setIcon(true)).catch(() => {});
             } else {
-                userPaused = true;
                 bgMusic.pause();
                 setIcon(false);
             }
