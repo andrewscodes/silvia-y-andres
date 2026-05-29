@@ -179,11 +179,29 @@
 <span class="font-body-lg text-xl font-semibold text-primary tracking-widest uppercase">15 DE AGOSTO 2026</span>
 </div>
 </div>
-<a class="group absolute bottom-xl left-0 right-0 mx-auto w-fit z-10 inline-flex flex-col items-center justify-center text-primary hover:text-secondary transition-colors animate-bounce" aria-label="Deslizar para ver la invitación" href="#bendicion">
+<a class="group absolute bottom-xl left-0 right-0 mx-auto w-fit z-10 inline-flex flex-col items-center justify-center text-primary hover:text-secondary transition-colors animate-bounce" aria-label="Deslizar para ver la invitación" href="#cancion">
 <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 </a>
+</section>
+<!-- 2. CANCIÓN -->
+<section class="py-xl px-gutter bg-surface-bright relative" id="cancion">
+<div class="max-w-3xl mx-auto reveal text-center">
+<p class="font-label-caps text-label-caps text-text-secondary uppercase tracking-[0.16em] mb-md">PRESIONA EL ▶ PARA ESCUCHAR NUESTRA CANCIÓN</p>
+<div class="w-56 h-px bg-outline/60 mx-auto mb-md"></div>
+<div class="inline-flex items-center gap-md text-primary">
+<button id="music-prev" class="bg-transparent text-primary hover:text-secondary transition-colors inline-flex items-center justify-center" aria-label="Retroceder canción" type="button">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">skip_previous</span>
+</button>
+<button id="music-play" class="bg-transparent text-primary hover:text-secondary transition-colors inline-flex items-center justify-center" aria-label="Reproducir canción" type="button">
+<span id="music-play-icon" class="material-symbols-outlined text-[2.2rem] leading-none" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">play_arrow</span>
+</button>
+<button id="music-next" class="bg-transparent text-primary hover:text-secondary transition-colors inline-flex items-center justify-center" aria-label="Avanzar canción" type="button">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">skip_next</span>
+</button>
+</div>
+</div>
 </section>
 <!-- 2. BENDICIÓN -->
 <section class="py-xxl px-gutter bg-surface-bright relative" id="bendicion">
@@ -441,7 +459,7 @@ En la playa, bajo un atardecer inolvidable</p>
 <div class="flex flex-col items-center">
 <h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-sm">Mujeres</h4>
 <p class="font-body-md text-body-md text-text-secondary">
-                        Sugerimos vestido largo en tonos vivos y evitar colores <b>blanco</b> y pasteles para mantener la armonía de nuestro día especial.
+                        Sugerimos vestido largo unicolor en tonos vivos y evitar colores <b>blanco</b> y pasteles para mantener la armonía de nuestro día especial.
                     </p>
 <div class="flex justify-center space-x-3 mt-md">
 <img src="./assets/dress.png" alt="Dress" class="w-full max-w-[16rem] md:max-w-[23rem] h-auto object-contain mx-auto">
@@ -498,9 +516,6 @@ En la playa, bajo un atardecer inolvidable</p>
 </section>
 <!-- Background music -->
 <audio id="bg-music" src="assets/song.mp3" loop preload="auto"></audio>
-<button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary text-white-soft shadow-lg hover:bg-secondary transition-all flex items-center justify-center" aria-label="Reproducir música">
-<span class="material-symbols-outlined" id="music-icon" data-icon="music_off">music_off</span>
-</button>
 </main>
 <script>
         // Scroll Reveal Logic — IntersectionObserver
@@ -586,27 +601,47 @@ En la playa, bajo un atardecer inolvidable</p>
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 1000);
 
-        // Background music - manual toggle only
+        // Background music - section controls
         const bgMusic = document.getElementById('bg-music');
-        const musicToggle = document.getElementById('music-toggle');
-        const musicIcon = document.getElementById('music-icon');
+        const musicPrev = document.getElementById('music-prev');
+        const musicPlay = document.getElementById('music-play');
+        const musicNext = document.getElementById('music-next');
+        const musicPlayIcon = document.getElementById('music-play-icon');
         bgMusic.volume = 0.5;
 
-        function setIcon(playing) {
-            musicIcon.textContent = playing ? 'music_note' : 'music_off';
-            musicToggle.setAttribute('aria-label', playing ? 'Silenciar mÃºsica' : 'Reproducir mÃºsica');
+        function setPlayerState(playing) {
+            if (!musicPlay || !musicPlayIcon) return;
+            musicPlayIcon.textContent = playing ? 'pause' : 'play_arrow';
+            musicPlay.setAttribute('aria-label', playing ? 'Pausar canción' : 'Reproducir canción');
         }
 
-        // Manual toggle — music only plays when the button is pressed
-        musicToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (bgMusic.paused) {
-                bgMusic.play().then(() => setIcon(true)).catch(() => {});
-            } else {
-                bgMusic.pause();
-                setIcon(false);
-            }
-        });
+        if (musicPlay) {
+            musicPlay.addEventListener('click', () => {
+                if (bgMusic.paused) {
+                    bgMusic.play().then(() => setPlayerState(true)).catch(() => {});
+                } else {
+                    bgMusic.pause();
+                    setPlayerState(false);
+                }
+            });
+        }
+
+        if (musicPrev) {
+            musicPrev.addEventListener('click', () => {
+                bgMusic.currentTime = Math.max(0, bgMusic.currentTime - 10);
+            });
+        }
+
+        if (musicNext) {
+            musicNext.addEventListener('click', () => {
+                const target = bgMusic.currentTime + 10;
+                const maxTime = Number.isFinite(bgMusic.duration) ? bgMusic.duration : target;
+                bgMusic.currentTime = Math.min(target, maxTime);
+            });
+        }
+
+        bgMusic.addEventListener('play', () => setPlayerState(true));
+        bgMusic.addEventListener('pause', () => setPlayerState(false));
     </script>
 
 
